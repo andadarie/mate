@@ -91,29 +91,20 @@ public class TotiDivizorii extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
         String preluare = jTextField1.getText();
         int a = Integer.parseInt(preluare);
-        
+        StringBuilder builder = new StringBuilder();
         int[] result = new int[1000];
-        for(int k =0; k<1000; k++){
-            for (int i=1;i<=a;i++) 
-                if (a%i==0){
-                    result[k] = i;
-                    String afisare = String.valueOf(result[k]) + ", ";
-                    jLabel4.setText(afisare);
-                }
-            
+        for (int i=1;i<=a;i++){ 
+            if (a%i==0){
+                result[i] = i;
+                builder.append(result[i] + ", ");
+            }
         }
-        //String afisare = String.valueOf(result[k]);
-        
+            
+        jLabel4.setText(builder.toString());        
     }//GEN-LAST:event_jButton1ActionPerformed
-
-    /**
-     * @param args the command line arguments
-     */
-
-    
+   
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
